@@ -16,12 +16,12 @@ public class GameOverClass : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("StartButton ไม่พบ component Button");
+                Debug.LogWarning("ButtonGamOver ไม่พบ component Button");
             }
         }
         else
         {
-            Debug.LogWarning("ไม่พบ GameObject ชื่อ StartButton ใน Hierarchy");
+            Debug.LogWarning("ไม่พบ GameObject ชื่อ ButtonGamOver ใน Hierarchy");
         }
     }
 

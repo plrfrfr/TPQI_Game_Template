@@ -37,6 +37,9 @@ public class PlayerClass : MonoBehaviour
         viewPos.y = Mathf.Clamp01(viewPos.y);
         transform.position = Camera.main.ViewportToWorldPoint(viewPos);
     }
+    
+    // ประกาศตัวแปร temp เพื่อเก็บค่าตำแหน่งแนวแกน x เพิ่ม
+    private Vector3 temp = new Vector3(1.0f,0 , 0);
 
     void Shoot()
     {
@@ -46,7 +49,10 @@ public class PlayerClass : MonoBehaviour
             {
                 if (bulletPrefab != null)
                 {
+                    // ปรับกระสุนเป็นยิงทีละ 3 นัดตามแนวแกน x จากยิงทแค่ทีละ 1 นัด
                     Instantiate(bulletPrefab, transform.position, transform.rotation);
+                    Instantiate(bulletPrefab, transform.position + temp, transform.rotation);
+                    Instantiate(bulletPrefab, transform.position + temp + temp, transform.rotation);
                 }
                 break;
             }
