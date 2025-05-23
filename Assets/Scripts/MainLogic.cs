@@ -39,7 +39,7 @@ public class MainLogic : MonoBehaviour
             }
             else
             {
-                ShowGameOverUI();
+                ShowWinUI();
             }
         }
     }
@@ -95,11 +95,28 @@ public class MainLogic : MonoBehaviour
         GameObject goUI = Resources.Load<GameObject>("UI/GameOver");
         if (goUI != null)
         {
+            Time.timeScale = 0f;
             Instantiate(goUI);
         }
         else
         {
             Debug.LogWarning("ไม่พบ GameOver UI ใน Resources/UI/GameOver");
+        }
+
+        enabled = false;
+    }
+    
+    private void ShowWinUI()
+    {
+        GameObject goUI = Resources.Load<GameObject>("UI/WinScreen");
+        if (goUI != null)
+        {
+            Time.timeScale = 0f;
+            Instantiate(goUI);
+        }
+        else
+        {
+            Debug.LogWarning("ไม่พบ GameOver UI ใน Resources/UI/WinScreen");
         }
 
         enabled = false;
