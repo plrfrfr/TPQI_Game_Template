@@ -49,7 +49,7 @@ public class PlayerClass : MonoBehaviour
             {
                 if (bulletPrefab != null)
                 {
-                    // ปรับกระสุนเป็นยิงทีละ 3 นัดตามแนวแกน x จากยิงทแค่ทีละ 1 นัด
+                    // ปรับกระสุนเป็นยิงทีละ 3 นัดตามแนวแกน x จากยิงแค่ทีละ 1 นัด
                     Instantiate(bulletPrefab, transform.position, transform.rotation);
                     Instantiate(bulletPrefab, transform.position + temp, transform.rotation);
                     Instantiate(bulletPrefab, transform.position + temp + temp, transform.rotation);
